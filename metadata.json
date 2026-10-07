@@ -1,0 +1,6 @@
+{
+  "name": "Cetak Amplop Raport SMK Muhammadiyah Bawang",
+  "description": "Aplikasi pembuat dan pencetak amplop raport siswa otomatis dengan kop surat resmi, navigasi data absen, dan format siap cetak PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
