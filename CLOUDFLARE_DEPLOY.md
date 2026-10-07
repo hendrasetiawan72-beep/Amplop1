@@ -19,6 +19,7 @@ Metode ini memberikan Continuous Deployment (otomatis update saat Anda push peru
    - **Build command**: `npm run build`
    - **Build output directory**: `dist`
    - **Root directory**: `/` (kosongkan atau biarkan default)
+   - **Deploy command**: *(Biarkan KOSONG — Cloudflare Pages otomatis deploy folder dist)*
 
 4. **Environment Variables** (Opsional):
    - `NODE_VERSION`: `20` (atau `18`)

@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "pages:build": "vite build",
-    "deploy": "npx wrangler deploy",
+    "deploy": "npx wrangler pages deploy dist",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
@@ -36,7 +36,6 @@
     "esbuild": "^0.25.0",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.21.0",
-    "typescript": "^7.0.2",
-    "wrangler": "^4.148.0"
+    "typescript": "^7.0.2"
   }
 }

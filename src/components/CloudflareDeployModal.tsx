@@ -143,8 +143,8 @@ export const CloudflareDeployModal: React.FC<CloudflareDeployModalProps> = ({
                 Pilih <strong>Connect to Git</strong> dan pilih repositori Anda.
               </li>
               <li>
-                Masukkan <strong>Build command:</strong> <code className="bg-gray-100 px-1 py-0.5 rounded text-indigo-700 font-bold">npm run build</code> dan{' '}
-                <strong>Output directory:</strong> <code className="bg-gray-100 px-1 py-0.5 rounded text-indigo-700 font-bold">dist</code>.
+                Masukkan <strong>Build command:</strong> <code className="bg-gray-100 px-1 py-0.5 rounded text-indigo-700 font-bold">npm run build</code>,{' '}
+                <strong>Output directory:</strong> <code className="bg-gray-100 px-1 py-0.5 rounded text-indigo-700 font-bold">dist</code>, dan pastikan <strong>Deploy command</strong> dibiarkan <strong>KOSONG</strong>.
               </li>
               <li>
                 Klik <strong>Save and Deploy</strong>. Selesai! Web Anda akan aktif dengan domain <code className="text-emerald-700 font-bold">*.pages.dev</code>.
