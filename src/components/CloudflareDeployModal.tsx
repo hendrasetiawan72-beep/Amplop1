@@ -204,6 +204,9 @@ export const CloudflareDeployModal: React.FC<CloudflareDeployModalProps> = ({
               <li>
                 <strong>wrangler.toml:</strong> Berkas deklarasi konfigurasi Cloudflare Pages.
               </li>
+              <li>
+                <strong>package-lock.json:</strong> Pengganti <code className="font-mono text-emerald-900">bun.lock</code> untuk menghindari error <code className="font-mono text-rose-700">Unknown lockfile version 2</code> di Cloudflare Pages.
+              </li>
             </ul>
           </div>
         </div>

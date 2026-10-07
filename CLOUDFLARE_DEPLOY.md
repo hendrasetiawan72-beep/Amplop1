@@ -47,6 +47,24 @@ Jika Anda ingin deploy langsung dari komputer Anda tanpa GitHub:
 
 ## 📁 Berkas Khusus Cloudflare yang Telah Disiapkan:
 
+- `package-lock.json`: Telah menggantikan `bun.lock` (versi 2) untuk mengatasi error build Cloudflare `Unknown lockfile version: failed to parse lockfile: 'bun.lock'`.
+- `.npmrc`: Dikonfigurasi dengan `legacy-peer-deps=true` agar `npm ci` atau `npm install` di Cloudflare Pages berjalan lancar tanpa kendala dependensi.
 - `public/_redirects`: Mengatur *Single Page Application fallback* (`/* /index.html 200`) agar saat halaman di-refresh tidak menghasilkan pesan error 404.
 - `public/_headers`: Mengatur keamanan browser (X-Frame-Options, MIME sniff protection) dan *cache-control* performa tinggi untuk aset `assets/*`.
 - `wrangler.toml`: Konfigurasi nama proyek dan direktori output build Cloudflare Pages.
+
+---
+
+## 🛠️ Catatan Terkait Solusi Error Bun vs NPM di Cloudflare:
+
+1. **Rekomendasi (NPM - Paling Stabil)**:
+   - Karena `bun.lock` versi 2 telah dihapus dan digantikan oleh `package-lock.json`, Cloudflare Pages otomatis menggunakan instalasi npm standar yang didukung penuh:
+     - **Build command**: `npm run build`
+     - **Build output directory**: `dist`
+   - Tidak memerlukan pengaturan Environment Variable tambahan.
+
+2. **Jika Tetap Ingin Menggunakan Bun**:
+   - Di dashboard Cloudflare Pages: **Settings** > **Environment variables** > **Add variable**:
+     - Name: `BUN_VERSION`
+     - Value: `1.4.2`
+   - **Build command**: `bun run build`
