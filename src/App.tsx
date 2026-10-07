@@ -18,6 +18,7 @@ import {
   Loader2,
   BookOpen,
   ArrowRight,
+  Cloud,
 } from 'lucide-react';
 
 import {
@@ -40,6 +41,7 @@ import { StudentManagerModal } from './components/StudentManagerModal';
 import { LetterheadSettingsModal } from './components/LetterheadSettingsModal';
 import { PrintSettingsModal } from './components/PrintSettingsModal';
 import { BatchPrintModal } from './components/BatchPrintModal';
+import { CloudflareDeployModal } from './components/CloudflareDeployModal';
 import { exportEnvelopeToImage, exportEnvelopeToPdf } from './utils/exportUtils';
 
 export default function App() {
@@ -92,6 +94,7 @@ export default function App() {
   const [showLetterheadModal, setShowLetterheadModal] = useState(false);
   const [showPrintSettingsModal, setShowPrintSettingsModal] = useState(false);
   const [showBatchPrintModal, setShowBatchPrintModal] = useState(false);
+  const [showCloudflareModal, setShowCloudflareModal] = useState(false);
 
   // Batch print targets for printing
   const [batchPrintList, setBatchPrintList] = useState<Student[]>([]);
@@ -342,6 +345,16 @@ export default function App() {
             >
               <Settings className="w-4 h-4 text-indigo-600" />
               <span className="hidden sm:inline">Ukuran & Format</span>
+            </button>
+
+            {/* Cloudflare Deploy Guide Button */}
+            <button
+              onClick={() => setShowCloudflareModal(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-xl transition shadow-2xs"
+              title="Panduan dan status deploy ke Cloudflare"
+            >
+              <Cloud className="w-4 h-4 text-amber-600" />
+              <span className="hidden lg:inline">Deploy Cloudflare</span>
             </button>
 
             {activePage === 'print' ? (
@@ -609,6 +622,11 @@ export default function App() {
         currentStudentIndex={currentIndex}
         onConfirmBatchPrint={handleConfirmBatchPrint}
         onDownloadPdfBatch={() => {}}
+      />
+
+      <CloudflareDeployModal
+        isOpen={showCloudflareModal}
+        onClose={() => setShowCloudflareModal(false)}
       />
     </div>
   );

@@ -1,0 +1,11 @@
+# Cloudflare Pages Caching & Security Headers
+
+# Static assets caching
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Main document
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
