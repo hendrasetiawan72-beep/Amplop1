@@ -38,7 +38,7 @@ Jika Anda ingin deploy langsung dari komputer Anda tanpa GitHub:
 
 2. **Deploy menggunakan Wrangler**:
    ```bash
-   npx wrangler pages deploy dist --project-name=cetak-amplop-smkmuhiba
+   npx wrangler pages deploy dist --project-name=amplop1
    ```
 
 3. Wrangler akan meminta login akun Cloudflare (jika belum login) dan langsung mempublikasikan aplikasi Anda ke edge network global Cloudflare!

@@ -164,7 +164,7 @@ export const CloudflareDeployModal: React.FC<CloudflareDeployModalProps> = ({
                 <button
                   onClick={() =>
                     handleCopy(
-                      'npm run build && npx wrangler pages deploy dist',
+                      'npm run build && npx wrangler pages deploy dist --project-name=amplop1',
                       'wrangler_cmd'
                     )
                   }
@@ -184,7 +184,7 @@ export const CloudflareDeployModal: React.FC<CloudflareDeployModalProps> = ({
               <p className="text-emerald-400"># 1. Build berkas produksi</p>
               <p className="text-white">npm run build</p>
               <p className="text-emerald-400 pt-1"># 2. Deploy langsung ke Cloudflare Pages</p>
-              <p className="text-amber-300">npx wrangler pages deploy dist --project-name=cetak-amplop-smkmuhiba</p>
+              <p className="text-amber-300">npx wrangler pages deploy dist --project-name=amplop1</p>
             </div>
           </div>
 
